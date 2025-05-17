@@ -8,7 +8,7 @@
 }
 
 body, html {
-    background-color: #342429; /*#342429 #795149 #8A7473*/
+    background-image: linear-gradient(to top, #342429, #795149);
     height: 100vh;
     width: 100vw;
 }
@@ -23,8 +23,7 @@ section#login {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    /*Sempre utilizar a configuração acima para centralizar uma caixa*/
+    
 
     overflow: hidden; /*tudo que estiver fora da borda, ficará escondido. ex: se a caixa tem a borda arrendondada e ao adicionar uma foto, a borda fica quadrada, basta adicionar esta configuração.*/
 
@@ -34,6 +33,17 @@ section#login {
     height: 600px;
     border-radius: 20px;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.83);
+
+    transition: width .3s, heigth .3s; 
+    /*
+    transition é uma propriedade CSS usada para criar efeitos de transição suave quando alguma outra propriedade CSS muda de valor.
+
+    - width .3s significa que quando a largura (width) de um elemento mudar, essa mudança acontecerá de forma suave, levando 0,3 segundos para completar.
+    - heigth .3s significa que a altura (height) também terá uma transição suave de 0,3 segundos.
+    */
+    transition-timing-function: ease; /*controla o ritmo da animação da transição, que nesse caso, começa lento, acelera no meio e finaliza lento novamente*/
+    transform: translate(-50%, -50%);
+    /*Sempre utilizar a configuração acima para centralizar uma caixa*/
 }
 
 section#login > div#imagem {
@@ -47,4 +57,60 @@ section#login > div#imagem {
 section#login > div#formulario {
     display: block;
     padding: 15px;
+}
+
+div#formulario > h1 {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+form > div.campo1 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+form > div.campo2 {
+    margin-bottom: 15px;
+}
+
+div.campo1 > input {
+    width: 47vw;
+    transform: translateY(-6px);
+}
+
+div.campo2 > input {
+    width: 47vw;
+    transform: translateY(-6px);
+}
+    
+form > input[type=submit] {
+    display: block;
+    width: 100%;
+    height: 35px;
+    border: none;
+    background-color: #795149;
+    color: #E3EAF3;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+form > input[type=submit]:hover {
+    background-color: #342429;
+}
+
+form > button {
+    display: block;
+    width: 100%;
+    height: 35px;
+    border: none;
+    background-color: #795149;
+    color: #E3EAF3;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+form > button:hover {
+    background-color: #342429;
 }
