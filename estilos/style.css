@@ -75,7 +75,7 @@ form > div.campo2 {
 
 div.campo1 > input {
     width: 47vw;
-    transform: translateY(-6px);
+    transform: translateY(-6px); /*subir a caixa (Y)*/
 }
 
 div.campo2 > input {
